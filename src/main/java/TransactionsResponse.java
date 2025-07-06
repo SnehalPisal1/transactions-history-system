@@ -6,4 +6,9 @@ public class TransactionsResponse {
     int totalPages;
     int currentPages;
 
+    public TransactionsResponse(List<Transactions> transactionsList, int totalPages, int currentPages) {
+        this.transactionsList = transactionsList;
+        this.totalPages = totalPages;
+        this.currentPages = currentPages;
+    }
 }
