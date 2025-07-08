@@ -17,6 +17,13 @@ public class TransactionHistoryApplication {
 
     private final Map<String, List<Transactions>> userTransactions= new ConcurrentHashMap<>();
 
+    public TransactionHistoryApplication(){
+        List<Transactions> mockTx= Arrays.asList(
+                new Transactions("txt1","user1", 1200, TransactionType.DEPOSITE, LocalDateTime.of(2025,1,2, 10, 2,3)),
+                new Transactions("txt2","user1", 1200, TransactionType.WITHDRAWAL, LocalDateTime.of(2025,3,2, 10, 2,3)),
+                new Transactions("txt3","user2", 1200, TransactionType.DEPOSITE, LocalDateTime.of(2025,6,2, 10, 2,3)),
+                new Transactions("txt4","user1", 1200, TransactionType.DEPOSITE, LocalDateTime.of(2025,2,2, 10, 2,3))
+        );
 
 }
 
