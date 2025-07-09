@@ -26,7 +26,7 @@ public class TransactionHistoryApplication {
                 new Transactions("txt4", "user1", 1200, TransactionType.DEPOSITE, LocalDateTime.of(2025, 2, 2, 10, 2, 3))
         );
 
-        for(Transactions tx : mockTx) {
+        for (Transactions tx : mockTx) {
             userTransactions.computeIfAbsent(tx.getUserId(), k -> new ArrayList<>()).add(tx);
         }
     }
