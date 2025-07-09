@@ -29,6 +29,7 @@ public class TransactionHistoryApplication {
         for(Transactions tx : mockTx) {
             userTransactions.computeIfAbsent(tx.getUserId(), k -> new ArrayList<>()).add(tx);
         }
+    }
 
         @RequestMapping(path = "/users/{userId}/transactions", method = RequestMethod.GET)
         public TransactionsResponse getTransactions(@PathVariable String userId,
