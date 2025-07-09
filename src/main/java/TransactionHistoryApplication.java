@@ -30,7 +30,13 @@ public class TransactionHistoryApplication {
         }
 
         @RequestMapping(path = "/users/{userId}/transactions", method = RequestMethod.GET)
-        public TransactionsResponse getTransactions(){
+        public TransactionsResponse getTransactions(@PathVariable String userId,
+                @RequestParam(required = false) String startDate,
+                @RequestParam(required = false) String endDate,
+                @RequestParam(defaultValue = "1") int page,
+                @RequestParam(defaultValue = "10") int size){
+
+
 
         }
     }
