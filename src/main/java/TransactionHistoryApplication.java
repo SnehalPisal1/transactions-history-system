@@ -39,6 +39,19 @@ public class TransactionHistoryApplication {
                 @RequestParam(defaultValue = "10") int size){
 
 
+            List<Transactions> transactionsList = userTransactions.getOrDefault(userId, Collections.emptyList());
+
+            List<Transactions> filtered = new ArrayList<>();
+
+            for(Transactions transaction : transactionsList){
+
+                // Date
+                LocalDate date = transaction.getTransactionTime().toLocalDate();
+
+                if(startDate != null && endDate != null){
+
+                    LocalDate start = LocalDate.parse(startDate);
+                    LocalDate end = LocalDate.parse(endDate);
 
         }
     }
