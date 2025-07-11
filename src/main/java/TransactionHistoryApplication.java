@@ -53,7 +53,24 @@ public class TransactionHistoryApplication {
                     LocalDate start = LocalDate.parse(startDate);
                     LocalDate end = LocalDate.parse(endDate);
 
+                    if(!date.isBefore(start) && !date.isAfter(end)){
+                        filtered.add(transaction);
+                    }
+                } else {
+                    filtered.add(transaction);
+                }
+
+            }
+
+            int totalItems = filtered.size();
+            int totalPage =(int) Math.ceil((double) totalItems / size);
+
+            return new TransactionsResponse(filtered, totalPage, page);
+
         }
     }
 }
+
+
+
 
